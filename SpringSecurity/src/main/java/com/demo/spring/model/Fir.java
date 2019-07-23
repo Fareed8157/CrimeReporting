@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 
 import org.springframework.web.multipart.MultipartFile;
@@ -31,6 +33,9 @@ public class Fir implements Serializable{
 	private String description;
 	private Long policeStationId;
 	private boolean enabled;
+	@ManyToOne
+	@JoinColumn(name="criminal_id")
+	private Criminal criminal;
 	
 	@JsonIgnore
 	@Transient 
