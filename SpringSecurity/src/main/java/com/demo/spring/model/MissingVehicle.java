@@ -2,6 +2,7 @@ package com.demo.spring.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,16 +12,17 @@ import lombok.Data;
 
 @Entity
 @Data
-public class MissingPerson implements Serializable{
-	
+public class MissingVehicle implements Serializable{
+
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -282106142408358980L;
+	private static final long serialVersionUID = -8759229460685829317L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-	private String name;
 	private String description;
-	
+	@Column(name="police_Theaf")
+	private boolean policeTheaf;
+
 }

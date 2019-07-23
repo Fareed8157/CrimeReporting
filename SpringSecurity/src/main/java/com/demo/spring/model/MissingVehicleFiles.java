@@ -14,12 +14,10 @@ import lombok.Data;
 
 @Entity
 @Data
-public class MissingPersonFiles implements Serializable{
-
-	/**
+public class MissingVehicleFiles implements Serializable{/**
 	 * 
 	 */
-	private static final long serialVersionUID = -7813345849165110175L;
+	private static final long serialVersionUID = 763996923284552760L;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -33,6 +31,6 @@ public class MissingPersonFiles implements Serializable{
 	private String fileExtension;
 	
 	@ManyToOne
-	@JoinColumn(name="missingPerson_id")
-	private MissingPerson missingPerson;
+	@JoinColumn(name="missingVehicle_id")
+	private MissingPerson missingVehicle;
 }
