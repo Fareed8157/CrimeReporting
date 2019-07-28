@@ -33,6 +33,12 @@ public class User implements Serializable{
 	private String firstName;
 	@Column(name="last_name")
 	private String lastName;
+	@Column(name="district")
+	private String district;
+	@Column(name="address")
+	private String address;
+	@Column(name="father_name")
+	private String fatherName;
 	@Column(name="email")
 	private String email;
 	@Column(name="password")

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -31,7 +32,10 @@ public class Fir implements Serializable{
 	private Long id;
 	private String title;
 	private String description;
+	@Column(name="police_station_id")
 	private Long policeStationId;
+	@Column(name="crime_id")
+	private Long crimeId;
 	private boolean enabled;
 	@ManyToOne
 	@JoinColumn(name="criminal_id")
