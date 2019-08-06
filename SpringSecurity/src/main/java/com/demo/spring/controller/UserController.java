@@ -31,4 +31,5 @@ public class UserController {
 		User user=userService.getUserByEmail(principal.getName());
 		return new ResponseEntity<User>(user,HttpStatus.OK);
 	}
+	
 }

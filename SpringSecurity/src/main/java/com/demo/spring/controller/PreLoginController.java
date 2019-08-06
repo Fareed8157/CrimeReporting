@@ -24,10 +24,12 @@ public class PreLoginController {
 	@PostMapping(value="/registration")
 	public ResponseEntity<Response> registration(@RequestBody Employee user){
 		User dbUser;
-		if(user.getPoliceStationId()!=null) {
+		if(user.getPoliceStation()!=null) {
 			dbUser=userService.save(user);
 		}
-		
+		if(user.getRole()==null) {
+			user.setRole("USER");
+		}
 		dbUser=userService.save(user);
 		System.out.println("DbUser of Employee"+user);
 		if(dbUser!=null) {

@@ -17,9 +17,10 @@ public class JwtuserFactory {
 
 	public static UserDetails create(User user) {
 		
-		JwtUser jwtUser=new JwtUser(user.getId(), user.getEmail(), user.getPassword(),user.getPhoneNumber(), user
+		JwtUser jwtUser=new JwtUser(user.getId(), user.getPhoneNumber(), user.getPassword(),user.getEmail(), user
 		, maptoGrantedAuthorities(new ArrayList<String>(Arrays.asList("ROLE_"+user.getRole()))), user.isEnabled());
 		return jwtUser;
+	
 	}
 
 	private static List<GrantedAuthority> maptoGrantedAuthorities(List<String> authorities) {

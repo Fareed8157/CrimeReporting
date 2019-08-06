@@ -28,10 +28,14 @@ public class Criminal {
 	private String lastName;
 	private String nic;
 	private String description;
+	private boolean enabled;
+	@JsonIgnore
 	@OneToMany(mappedBy="criminal")
-	private List<Fir> listOfFirs;
+	private List<Fir> fir;
 	
 	@JsonIgnore
 	@Transient 
 	private List<MultipartFile> files=new ArrayList<MultipartFile>();
+	@Transient 
+	private List<String> removeImages=new ArrayList<String>();
 }

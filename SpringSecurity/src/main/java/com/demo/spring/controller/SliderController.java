@@ -53,11 +53,11 @@ public class SliderController {
 	public ResponseEntity<EventResponse> saveSlider(MultipartHttpServletRequest file ,@RequestParam(required=false,value="slider") String slider) throws JsonParseException, JsonMappingException, IOException{
 		Slider slider1=new ObjectMapper().readValue(slider,Slider.class);
 		sliderService.save(slider1,file);
-		//if(file!=null)
+		if(file!=null)
 			System.out.println("File name");
-		System.out.println("Slider"+slider1);
+		//System.out.println("Slider"+slider1);
 		System.out.println("Inside save slider");
-		return new ResponseEntity<EventResponse>(new EventResponse(""),HttpStatus.OK);
+		return new ResponseEntity<EventResponse>(new EventResponse("Slider saved successfully"),HttpStatus.OK);
 	}
 	
 	

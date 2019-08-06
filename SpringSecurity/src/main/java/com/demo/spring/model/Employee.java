@@ -16,23 +16,23 @@ import lombok.EqualsAndHashCode;
 import lombok.Setter;
 
 @Entity
-
 public class Employee extends User{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -2784105343659158615L;
-	@Column(name="police_station_id")
-	private Long policeStationId;
-	public Long getPoliceStationId() {
-		return policeStationId;
+	@JoinColumn(name="police_station_id")
+	@ManyToOne
+	private PoliceStation policeStation;
+	public PoliceStation getPoliceStation() {
+		return policeStation;
 	}
-	public void setPoliceStationId(Long policeStationId) {
-		this.policeStationId = policeStationId;
+	public void setPoliceStation(PoliceStation policeStation) {
+		this.policeStation = policeStation;
 	}
 	
-
+	
 	
 	
 }
